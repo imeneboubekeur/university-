@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+
+  --color-custom-navy: #2F4156;
+  --color-custom-teal: #567CBD;
+  --color-custom-sky: #CBD9E6;
+  --color-custom-beige: #F5EFEB;
+  --color-custom-white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #F5EFEB;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #official-transcript-document,
+  #official-transcript-document * {
+    visibility: visible !important;
+  }
+
+  #official-transcript-document {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #official-transcript-document section {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  #official-transcript-document table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #official-transcript-document th,
+  #official-transcript-document td {
+    border: 1px solid #dce3ea;
+    padding: 7px;
+    font-size: 9px;
+  }
+
+  #official-transcript-document thead {
+    display: table-header-group;
+  }
+
+  #official-transcript-document tr {
+    break-inside: avoid;
+  }
+}
