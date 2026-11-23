@@ -9,11 +9,10 @@ import { createToken } from '../utils/jwt.js'
 const cookieOptions = {
   httpOnly: true,
   secure: process.env.NODE_ENV === 'production',
-  sameSite: 'lax',
-  maxAge: 24 * 60 * 60 * 1000,
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
   path: '/',
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 }
-
 
 export async function register(req, res, next) {
   try {
